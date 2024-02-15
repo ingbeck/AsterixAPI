@@ -12,21 +12,21 @@ import java.util.List;
 @RequestMapping("/asterix/characters")
 public class AstrixController {
 
-    List<Character> characters = new ArrayList<>();
+    List<AsterixCharacter> characters = new ArrayList<>();
 
     @GetMapping
-    public  List<Character> getCharacters(){
+    public  List<AsterixCharacter> getCharacters(){
         return List.of(
-                new Character("1", "Asterix", 35, "Krieger"),
-                new Character("2", "Obelix", 35, "Lieferant"),
-                new Character("3", "Miraculix", 60, "Druide"),
-                new Character("4", "Majestix", 60, "Häuptling"),
-                new Character("5", "Troubadix", 25, "Barde"),
-                new Character("6", "Gutemine", 35, "Häuptlingsfrau"),
-                new Character("7", "Idefix", 5, "Hund"),
-                new Character("8", "Geriatrix", 70, "Rentner"),
-                new Character("9", "Automatix", 35, "Schmied"),
-                new Character("10", "Grockelix", 35, "Fischer")
+                new AsterixCharacter("1", "Asterix", 35, "Krieger"),
+                new AsterixCharacter("2", "Obelix", 35, "Lieferant"),
+                new AsterixCharacter("3", "Miraculix", 60, "Druide"),
+                new AsterixCharacter("4", "Majestix", 60, "Häuptling"),
+                new AsterixCharacter("5", "Troubadix", 25, "Barde"),
+                new AsterixCharacter("6", "Gutemine", 35, "Häuptlingsfrau"),
+                new AsterixCharacter("7", "Idefix", 5, "Hund"),
+                new AsterixCharacter("8", "Geriatrix", 70, "Rentner"),
+                new AsterixCharacter("9", "Automatix", 35, "Schmied"),
+                new AsterixCharacter("10", "Grockelix", 35, "Fischer")
         );
     }
 }
