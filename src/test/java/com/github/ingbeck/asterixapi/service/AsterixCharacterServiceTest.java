@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.stubbing.Stubber;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -45,8 +46,17 @@ class AsterixCharacterServiceTest {
     @Test
     void deleteCharacterByID() {
         //GIVEN
+        List<AsterixCharacter> allCharacters = List.of(new AsterixCharacter("1", "Asterix", 35, "Krieger"),
+                new AsterixCharacter("2", "Obelix", 35, "Lieferant"));
+        List<AsterixCharacter> expected = allCharacters.subList(1,1);
+        when(repo.findAll()).thenReturn(expected);
+        when(repo.findById("1")).thenReturn(Optional.of(allCharacters.get(0)));
         //WHEN
+        List<AsterixCharacter> actual = service.deleteCharacterByID("1");
         //THEN
+        assertEquals(expected, actual);
+        verify(repo).findById("1");
+        verify(repo).findAll();
     }
 
     @Test
