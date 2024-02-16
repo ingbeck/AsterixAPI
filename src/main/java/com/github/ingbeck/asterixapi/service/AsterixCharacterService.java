@@ -55,15 +55,11 @@ public class AsterixCharacterService {
 
         for(AsterixCharacter character : repo.findAll()){
             allIds[count] = Integer.parseInt(character.getId());
+            if(count > 0 && (allIds[count] > allIds[count-1])){
+                lastId = allIds[count];
+            }
             count ++;
         }
-
-        for(int i = 1; i<allIds.length; i++){
-            if (allIds[i] > allIds[i-1]){
-                lastId = allIds[i];
-            }
-        }
-
         return "" + (lastId + 1);
     }
 }
