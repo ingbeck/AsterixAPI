@@ -1,6 +1,7 @@
 package com.github.ingbeck.asterixapi.controller;
 
 import com.github.ingbeck.asterixapi.model.AsterixCharacter;
+import com.github.ingbeck.asterixapi.model.AsterixCharacterDto;
 import com.github.ingbeck.asterixapi.repository.AsterixCharacterRepo;
 import com.github.ingbeck.asterixapi.service.AsterixCharacterService;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,12 @@ public class AstrixController {
     @ResponseStatus(HttpStatus.CREATED)
     public AsterixCharacter saveNewAsterixCharacter(@RequestBody AsterixCharacter asterixCharacter){
         return service.saveNewAsterixCharacter(asterixCharacter);
+    }
+
+    @PostMapping("/new_character")
+    @ResponseStatus(HttpStatus.CREATED)
+    public AsterixCharacterDto aveNewAsterixCharacterWithoutId(@RequestBody AsterixCharacter asterixCharacter){
+        return service.saveNewAsterixCharacterWithoutId(asterixCharacter);
     }
 
     @DeleteMapping("/{id}")
