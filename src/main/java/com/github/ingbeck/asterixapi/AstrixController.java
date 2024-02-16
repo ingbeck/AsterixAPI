@@ -1,6 +1,7 @@
 package com.github.ingbeck.asterixapi;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,7 +37,8 @@ public class AstrixController {
 
     @PutMapping("/{id}")
     public AsterixCharacter updateCharacter(@PathVariable String id, @RequestBody AsterixCharacter asterixCharacter){
-        AsterixCharacter existingCharacter = asterixCharacterRepo.findById(id)
+        AsterixCharacter existingCharacter = asterixCharacterRepo
+                .findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Element with Id: " + id + "not present"));
         existingCharacter.setAge(asterixCharacter.getAge());
         existingCharacter.setName(asterixCharacter.getName());
