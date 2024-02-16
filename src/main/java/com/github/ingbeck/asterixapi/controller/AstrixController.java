@@ -1,12 +1,11 @@
-package com.github.ingbeck.asterixapi;
+package com.github.ingbeck.asterixapi.controller;
 
+import com.github.ingbeck.asterixapi.model.AsterixCharacter;
+import com.github.ingbeck.asterixapi.repository.AsterixCharacterRepo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.chrono.ChronoLocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 

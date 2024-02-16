@@ -1,4 +1,4 @@
-package com.github.ingbeck.asterixapi;
+package com.github.ingbeck.asterixapi.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
